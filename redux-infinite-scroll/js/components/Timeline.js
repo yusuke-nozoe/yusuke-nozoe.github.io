@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
+import * as actions from '../actions';
+import LoadMore from './LoadMore';
 
 class Timeline extends Component {
     render() {
-        const { page, loadMore } = this.props;
+        const { page } = this.props;
         let list = [];
         for (let i = 0; i < page*10; i++) {
             list.push(<div key={i} className="list-item">Item {i+1}</div>);
@@ -11,28 +13,34 @@ class Timeline extends Component {
         return (
             <div>
                 {list}
-                <div onClick={loadMore}>Load More</div>
+                <LoadMore loadMore={this._loadMore.bind(this)} />
             </div>
         );
+    }
+    _loadMore() {
+        const { isLoading, loadMore } = this.props;
+        if (!isLoading) {
+            loadMore();
+        }
     }
 }
 
 Timeline.propTypes = {
+    isLoading: PropTypes.bool.isRequired,
     loadMore: PropTypes.func.isRequired,
     page: PropTypes.number.isRequired
 }
 
 const mapStateToProps = (state) => {
     return {
+        isLoading: state.isLoading,
         page: state.page
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        loadMore: () => {
-            setTimeout(() => dispatch({type: 'LOAD_MORE'}), 2000);
-        }
+        loadMore: () => actions.loadMore(dispatch)
     }
 }
 

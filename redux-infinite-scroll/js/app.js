@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import { createStore } from 'redux'
 
-function counter(state = { page: 1 }, action) {
+function counter(state = { isLoading: false, page: 1 }, action) {
   switch (action.type) {
   case 'LOAD_MORE':
     return {
+      isLoading: true,
+      page: state.page
+    };
+  case 'LOAD_FINISHED':
+    return {
+      isLoading: false,
       page: state.page + 1
     };
   default:
