@@ -29,37 +29,30 @@ const d3List = [
   { date: '2016/04/03', filePath: "d3-multi-line.html", title: 'D3 multi-series line chart' }
 ];
 
+function _linkItem(item) {
+  const filePath = `toybox/${item.filePath}`;
+  return (
+    <li key={item.filePath}>
+        <a href={filePath}>{item.title} ({item.date})
+        </a> <a href={`${baseURL}/${filePath}`} target="_blank">Source</a>
+    </li>
+  );
+}
+
 const Root = ({}) => (
   <main>
     <h1>Front end playground</h1>
     <h2>CSS</h2>
-    <ul>
-    {cssList.map(item => (
-        <li key={item.filePath}>
-            <a href={item.filePath}>{item.title} ({item.date})
-            </a> <a href={`{baseURL}/{item.filePath}`} target="_blank">Source</a>
-        </li>
-    ))}
-    </ul>
+    <ul>{cssList.map(item => _linkItem(item))}</ul>
     <h2>JavaScript</h2>
     <ul>
-      {jsList.map(item => (
-          <li key={item.filePath}>
-              <a href={item.filePath}>{item.title} ({item.date})
-              </a> <a href={`{baseURL}/{item.filePath}`} target="_blank">Source</a>
-          </li>
-      ))}
+      {jsList.map(item => _linkItem(item))}
       <li>Redux Kanban board UI (Drag&Drop)</li>
       <li>Redux Color Slider</li>
     </ul>
     <h2>Chart / Data Visualization</h2>
     <ul>
-      {d3List.map(item => (
-          <li key={item.filePath}>
-              <a href={item.filePath}>{item.title} ({item.date})
-              </a> <a href={`{baseURL}/{item.filePath}`} target="_blank">Source</a>
-          </li>
-      ))}
+      {d3List.map(item => _linkItem(item))}
       <li>D3 area chart</li>
       <li>D3 pie chart</li>
       <li>D3 bar chart</li>
