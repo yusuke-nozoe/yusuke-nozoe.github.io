@@ -4,27 +4,25 @@
   <body>
     <h1>Front end playground</h1>
     <h2>CSS</h2>
-    <ul id="css-list">
+    <ul>
       <li v-for="item in cssList">
-      <a href={{item.filePath}}>{{item.title}} ({{item.date}})</a> <a href="{{baseURL}}/{{item.filePath}}" target="_blank">Source</a>
+          <a href={{item.filePath}}>{{item.title}} ({{item.date}})</a> <a href="{{baseURL}}/{{item.filePath}}" target="_blank">Source</a>
       </li>
       <li>Icon Catalog(Font Awesome etc.)</li>
     </ul>
     <h2>JavaScript</h2>
     <ul>
-      <li><a href="angular-hello-world.html">Hello world in AngularJS 1.x(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/angular-hello-world.html" target="_blank">Source</a></li>
-      <li><a href="backbone-hello-world.html">Hello world in BackboneJS(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/backbone-hello-world.html" target="_blank">Source</a></li>
-      <li><a href="vue-hello-world.html">Hello world in Vue.js(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/vue-hello-world.html" target="_blank">Source</a></li>
-      <li><a href="react-hello-world">Hello world in React(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/react-hello-world" target="_blank">Source</a></li>
-      <li><a href="redux-counter">Redux Counter(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/redux-counter" target="_blank">Source</a></li>
-      <li><a href="redux-infinite-scroll">Redux Infinite Scroll(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/redux-infinite-scroll" target="_blank">Source</a></li>
+      <li v-for="item in jsList">
+          <a href={{item.filePath}}>{{item.title}} ({{item.date}})</a> <a href="{{baseURL}}/{{item.filePath}}" target="_blank">Source</a>
+      </li>
       <li>Redux Kanban board UI (Drag&Drop)</li>
       <li>Redux Color Slider</li>
     </ul>
     <h2>Chart / Data Visualization</h2>
     <ul>
-      <li><a href="d3-line.html">D3 line chart (Yahoo stock price)(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/d3-line.html" target="_blank">Source</a></li>
-      <li><a href="d3-multi-line.html">D3 multi-series line chart(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/d3-multi-line.html" target="_blank">Source</a></li>
+      <li v-for="item in d3List">
+          <a href={{item.filePath}}>{{item.title}} ({{item.date}})</a> <a href="{{baseURL}}/{{item.filePath}}" target="_blank">Source</a>
+      </li>
       <li>D3 area chart</li>
       <li>D3 pie chart</li>
       <li>D3 bar chart</li>
@@ -53,11 +51,25 @@
         { date: '2016/04/03', filePath: 'fonts.html', title: 'Fonts' },
         { date: '2016/04/03', filePath: 'dashboard', title: 'Dashboard UI' }
       ];
+      var jsList = [
+        { date: '2016/04/03', filePath: "angular-hello-world.html", title: 'Hello world in AngularJS 1.x' },
+        { date: '2016/04/03', filePath: "backbone-hello-world.html", title: 'Hello world in BackboneJS' },
+        { date: '2016/04/03', filePath: "vue-hello-world.html", title: 'Hello world in Vue.js' },
+        { date: '2016/04/03', filePath: "react-hello-world", title: 'Hello world in React' },
+        { date: '2016/04/03', filePath: "redux-counter", title: 'Redux Counter' },
+        { date: '2016/04/03', filePath: "redux-infinite-scroll", title: 'Redux Infinite Scroll' }
+      ];
+      var d3List = [
+        { date: '2016/04/03', filePath: "d3-line.html", title: 'D3 line chart (Yahoo stock price)' },
+        { date: '2016/04/03', filePath: "d3-multi-line.html", title: 'D3 multi-series line chart' }
+      ];
       new Vue({
-        el: '#css-list',
+        el: 'body',
         data: {
           baseURL: baseURL,
-          cssList: cssList
+          cssList: cssList,
+          jsList: jsList,
+          d3List: d3List
         }
       });
     </script>
