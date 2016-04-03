@@ -18,8 +18,9 @@ export default class LoadMore extends Component {
         window.removeEventListener('scroll', _checkLoad);
     }
     render() {
-        const { loadMore } = this.props;
-        return <div onClick={loadMore}>Load More</div>;
+        const { isLoading, loadMore } = this.props;
+        let dadada = (isLoading) ? '...' : '';
+        return <div className="infinite-loader" onClick={loadMore}>Load More{dadada}</div>;
     }
     _checkLoad(e) {
         var node = ReactDOM.findDOMNode(this);

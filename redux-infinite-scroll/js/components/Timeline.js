@@ -5,7 +5,7 @@ import LoadMore from './LoadMore';
 
 class Timeline extends Component {
     render() {
-        const { page } = this.props;
+        const { isLoading, page } = this.props;
         let list = [];
         for (let i = 0; i < page*10; i++) {
             list.push(<div key={i} className="list-item">Item {i+1}</div>);
@@ -13,7 +13,7 @@ class Timeline extends Component {
         return (
             <div>
                 {list}
-                <LoadMore loadMore={this._loadMore.bind(this)} />
+                <LoadMore isLoading={isLoading} loadMore={this._loadMore.bind(this)} />
             </div>
         );
     }
