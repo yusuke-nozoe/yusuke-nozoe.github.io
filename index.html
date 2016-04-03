@@ -4,20 +4,10 @@
   <body>
     <h1>Front end playground</h1>
     <h2>CSS</h2>
-    <ul>
-      <li><a href="two-columns.html">Two columns (2016/04/01)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/two-columns.html" target="_blank">Source</a></li>
-      <li><a href="five-sections.html">Five sections (2016/04/01)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/five-sections.html" target="_blank">Source</a></li>
-      <li><a href="circle.html">Circle (2016/04/02)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/circle.html" target="_blank">Source</a></li>
-      <li><a href="triangle.html">Triangle (2016/04/02)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/triangle.html" target="_blank">Source</a></li>
-      <li><a href="grid.html">Grid Structure (2016/04/02)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/grid.html" target="_blank">Source</a></li>
-      <li><a href="responsive.html">Responsive Grid (2016/04/02)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/responsive.html" target="_blank">Source</a></li>
-      <li><a href="pinterest-ui.html">Pinterest like UI (2016/04/02)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/pinterest-ui.html" target="_blank">Source</a></li>
-      <li><a href="sidebar-scroll.html">Sidebar Scroll (2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/sidebar-scroll.html" target="_blank">Source</a></li>
-      <li><a href="sidebar-responsive.html">Sidebar Responsive (2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/sidebar-responsive.html" target="_blank">Source</a></li>
-      <li><a href="fonts.html">Fonts (2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/fonts.html" target="_blank">Source</a></li>
-      <li><a href="dashboard">Dashboard UI (2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/dashboard" target="_blank">Source</a></li>
-      <li>Time line</li>
-      <li>Switch color themes</li>
+    <ul id="css-list">
+      <li v-for="item in cssList">
+      <a href={{item.filePath}}>{{item.title}} ({{item.date}})</a> <a href="{{baseURL}}/{{item.filePath}}" target="_blank">Source</a>
+      </li>
     </ul>
     <h2>JavaScript</h2>
     <ul>
@@ -28,6 +18,7 @@
       <li><a href="redux-counter">Redux Counter(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/redux-counter" target="_blank">Source</a></li>
       <li><a href="redux-infinite-scroll">Redux Infinite Scroll(2016/04/03)</a> <a href="https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master/redux-infinite-scroll" target="_blank">Source</a></li>
       <li>Redux Kanban board UI (Drag&Drop)</li>
+      <li>Redux Color Slider</li>
     </ul>
     <h2>Chart / Data Visualization</h2>
     <ul>
@@ -37,11 +28,36 @@
       <li>D3 pie chart</li>
       <li>D3 bar chart</li>
       <li>D3 bubble chart</li>
+      <li>Historical Stock Price Viewer(Ticker, Date range, Add-remove series)</li>
     </ul>
     <h2>Games</h2>
     <ul>
       <li>Othello</li>
       <li>Tetris</li>
     </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var baseURL = 'https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master';
+      var cssList = [
+        { filePath: "two-columns.html", title: 'Two columns', date: '2016/04/01' },
+        { filePath: 'five-sections.html', title: 'Five sections', date: '2016/04/01' },
+        { filePath: 'circle.html', title: 'Circle', date: '2016/04/02' },
+        { filePath: 'triangle.html', title: 'Triangle', date: '2016/04/02' },
+        { filePath: 'grid.html', title: 'Grid Structure', date: '2016/04/02' },
+        { filePath: 'responsive.html', title: 'Responsive Grid', date: '2016/04/02' },
+        { filePath: 'pinterest-ui.html', title: 'Pinterest like UI', date: '2016/04/02' },
+        { filePath: 'sidebar-scroll.html', title: 'Sidebar Scroll', date: '2016/04/03' },
+        { filePath: 'sidebar-responsive.html', title: 'Sidebar Responsive', date: '2016/04/03' },
+        { filePath: 'fonts.html', title: 'Fonts', date: '2016/04/03' },
+        { filePath: 'dashboard', title: 'Dashboard UI', date: '2016/04/03' }
+      ];
+      new Vue({
+        el: '#css-list',
+        data: {
+          baseURL: baseURL,
+          cssList: cssList
+        }
+      });
+    </script>
   </body>
 </html>
