@@ -8,6 +8,9 @@ body {
   line-height: 1.42857;
   color: rgb(118, 118, 118);
 }
+a {
+  text-decoration: none;
+}
 .header {
   width: 100%;
   height: 50px;
@@ -19,6 +22,36 @@ body {
     font-size: 24px;
     width: 220px;
     height: 100%;
+    position: absolute;
+  }
+  .header-nav {
+    padding: 10px 0 0 220px;
+    font-size: 16px;
+    line-height: 22px;
+    ul {
+      list-style: none;
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding: 0 12px;
+      &.nav-left {
+        float: left;
+      }
+      &.nav-right {
+        float: right;
+      }
+      li {
+        float: left;
+        a {
+          position: relative;
+          background-color: #eee;
+          display: block;
+          padding: 4px 8px;
+          border-radius: 22px;
+          background-color: transparent;
+          color: #fafafa;
+        }
+      }
+    }
   }
 }
 
@@ -43,7 +76,6 @@ body {
     border-bottom: 1px solid rgb(229, 229, 229);
     transition: all 0.2s ease-in-out;
     color: #767676;
-    text-decoration: none;
     font-weight: bold;
   }
 }
