@@ -42,31 +42,33 @@ function _linkItem(item) {
 const Root = ({}) => (
   <main>
     <div className="header">
-    Front-end Playground
+      <a href="/" className="brand">Front-end Playground</a>
     </div>
-    <h2>CSS</h2>
-    <ul>{cssList.map(item => _linkItem(item))}</ul>
-    <h2>JavaScript</h2>
-    <ul>
-      {jsList.map(item => _linkItem(item))}
-      <li>Redux Kanban board UI (Drag&Drop)</li>
-      <li>Redux Color Slider</li>
-    </ul>
-    <h2>Chart / Data Visualization</h2>
-    <ul>
-      {d3List.map(item => _linkItem(item))}
-      <li>D3 area chart</li>
-      <li>D3 pie chart</li>
-      <li>D3 bar chart</li>
-      <li>D3 bubble chart</li>
-      <li>World Statistics (Population, GDP, etc.)</li>
-      <li>Historical Stock Price Viewer(Ticker, Date range, Add-remove series)</li>
-    </ul>
-    <h2>Games</h2>
-    <ul>
-      <li>Othello</li>
-      <li>Tetris</li>
-    </ul>
+    <div className="container">
+      <h2>CSS</h2>
+      <ul>{cssList.map(item => _linkItem(item))}</ul>
+      <h2>JavaScript</h2>
+      <ul>
+        {jsList.map(item => _linkItem(item))}
+        <li>Redux Kanban board UI (Drag&Drop)</li>
+        <li>Redux Color Slider</li>
+      </ul>
+      <h2>Chart / Data Visualization</h2>
+      <ul>
+        {d3List.map(item => _linkItem(item))}
+        <li>D3 area chart</li>
+        <li>D3 pie chart</li>
+        <li>D3 bar chart</li>
+        <li>D3 bubble chart</li>
+        <li>World Statistics (Population, GDP, etc.)</li>
+        <li>Historical Stock Price Viewer(Ticker, Date range, Add-remove series)</li>
+      </ul>
+      <h2>Games</h2>
+      <ul>
+        <li>Othello</li>
+        <li>Tetris</li>
+      </ul>
+    </div>
   </main>
 );
 
