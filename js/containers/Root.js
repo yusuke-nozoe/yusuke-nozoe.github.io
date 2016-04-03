@@ -41,7 +41,9 @@ function _linkItem(item) {
 
 const Root = ({}) => (
   <main>
-    <h1>Front end playground</h1>
+    <div className="header">
+    Front-end Playground
+    </div>
     <h2>CSS</h2>
     <ul>{cssList.map(item => _linkItem(item))}</ul>
     <h2>JavaScript</h2>
