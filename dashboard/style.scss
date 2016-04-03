@@ -59,7 +59,7 @@ body {
   color: #34495e;
   background-color: #f3f3f3;
   .page {
-    padding: 15px;
+    padding: 15px 0;
   }
 }
 
@@ -91,6 +91,8 @@ body {
   position: relative;
   float: left;
   display: block;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .column-1 { width: 1 / 12 * 100%; }
@@ -135,14 +137,16 @@ body {
 Styling
 \*------------------------------*/
 
-.column {
-  background: #eee;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #777;
-  padding: 5px;
-  min-height: 30px;
-  text-align: center;
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+.panel-body {
+  padding: 15px;
 }
 
 .row {
