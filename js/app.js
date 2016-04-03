@@ -28,7 +28,7 @@ store.subscribe(() =>
   console.log(store.getState())
 )
 
-import RootComponent from './components';
+import RootComponent from './containers/Root';
 
 ReactDOM.render(
   <Provider store={store}>
