@@ -1,0 +1,33 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import { createStore } from 'redux'
+
+function counter(state = { page: 1 }, action) {
+  switch (action.type) {
+  case 'LOAD_MORE':
+    return {
+      page: state.page + 1
+    };
+  default:
+    return state
+  }
+}
+
+// Create a Redux store holding the state of your app.
+// Its API is { subscribe, dispatch, getState }.
+let store = createStore(counter)
+
+// You can subscribe to the updates manually, or use bindings to your view layer.
+store.subscribe(() =>
+  console.log(store.getState())
+)
+
+import RootComponent from './components';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <RootComponent />
+  </Provider>,
+  document.getElementById('react-app')
+);
