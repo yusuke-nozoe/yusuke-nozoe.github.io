@@ -23,11 +23,11 @@ store.subscribe(() =>
   console.log(store.getState())
 )
 
-import RootComponent from './components';
+import Timeline from './components/Timeline';
 
 ReactDOM.render(
   <Provider store={store}>
-    <RootComponent />
+    <Timeline />
   </Provider>,
   document.getElementById('react-app')
 );

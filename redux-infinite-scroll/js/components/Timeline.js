@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 
-class RootComponent extends Component {
+class Timeline extends Component {
     render() {
         const { page, loadMore } = this.props;
         let list = [];
@@ -17,7 +17,7 @@ class RootComponent extends Component {
     }
 }
 
-RootComponent.propTypes = {
+Timeline.propTypes = {
     loadMore: PropTypes.func.isRequired,
     page: PropTypes.number.isRequired
 }
@@ -36,4 +36,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RootComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(Timeline);
