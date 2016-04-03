@@ -4,46 +4,43 @@ body {
   font-family: Lato, 'Helvetica Neue', Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: rgb(118, 118, 118);
-}
+  color: #767676; }
+
 .header {
   width: 100%;
   height: 50px;
   color: #fafafa;
-  background-color: #222533;
-}
-.header > .brand {
-  text-align: center;
-  line-height: 50px;
-  font-size: 24px;
-  width: 220px;
-  height: 100%;
-}
+  background-color: #222533; }
+  .header .brand {
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    width: 220px;
+    height: 100%; }
+
 .sidebar {
   position: absolute;
   display: block;
-  border-right: 2px solid rgb(229, 229, 229);
+  border-right: 2px solid #e5e5e5;
   width: 220px;
   height: 100%;
   background-color: #fefefe;
-  padding: 0;
-}
-.sidebar > ul {
-  padding-left: 0;
-  list-style: none;
-  height: 100%;
-  margin-top: 0;
-}
-.sidebar > ul > li > a {
-  position: relative;
-  display: block;
-  padding: 15px;
-  border-bottom: 1px solid rgb(229, 229, 229);
-  transition: all 0.2s ease-in-out;
-  color: #767676;
-  text-decoration: none;
-  font-weight: bold;
-}
+  padding: 0; }
+  .sidebar ul {
+    padding-left: 0;
+    list-style: none;
+    height: 100%;
+    margin-top: 0; }
+  .sidebar ul > li > a {
+    position: relative;
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    transition: all 0.2s ease-in-out;
+    color: #767676;
+    text-decoration: none;
+    font-weight: bold; }
+
 .content {
   position: absolute;
   top: 50px;
@@ -53,114 +50,92 @@ body {
   width: auto;
   height: 100%;
   color: #34495e;
-  background-color: #f3f3f3;
-}
+  background-color: #f3f3f3; }
+  .content .page {
+    padding: 15px; }
 
-.content > .page {
-  padding: 15px;
-}
+@media only screen and (max-width: 550px) {
+  .content {
+    left: 0; }
 
+  .sidebar {
+    left: -220px; } }
 /* Grid structure */
-.row, 
+.row,
 .column {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .row:before,
 .row:after {
   content: " ";
-  display: table;
-}
+  display: table; }
 
 .row:after {
-  clear: both;
-}
+  clear: both; }
 
 .column {
   position: relative;
   float: left;
-  display: block;
-}
-
-.column + .column {
-  margin-left: 1.6%;
-}
+  display: block; }
 
 .column-1 {
-  width: 6.86666666667%;
-}
+  width: 8.33333%; }
 
 .column-2 {
-  width: 15.3333333333%;
-}
+  width: 16.66667%; }
 
 .column-3 {
-  width: 23.8%;
-}
+  width: 25%; }
 
 .column-4 {
-  width: 32.2666666667%;
-}
+  width: 33.33333%; }
 
 .column-5 {
-  width: 40.7333333333%;
-}
+  width: 41.66667%; }
 
 .column-6 {
-  width: 49.2%;
-}
+  width: 50%; }
 
 .column-7 {
-  width: 57.6666666667%;
-}
+  width: 58.33333%; }
 
 .column-8 {
-  width: 66.1333333333%;
-}
+  width: 66.66667%; }
 
 .column-9 {
-  width: 74.6%;
-}
+  width: 75%; }
 
 .column-10 {
-  width: 83.0666666667%;
-}
+  width: 83.33333%; }
 
 .column-11 {
-  width: 91.5333333333%;
-}
+  width: 91.66667%; }
 
 .column-12 {
   width: 100%;
-  margin-left: 0;
-}
+  margin-left: 0; }
 
 @media only screen and (max-width: 550px) {
-  .column-1, 
-  .column-2, 
-  .column-3, 
-  .column-4, 
-  .column-5, 
-  .column-6, 
-  .column-7, 
-  .column-8, 
-  .column-9, 
-  .column-10, 
-  .column-11, 
+  .column-1,
+  .column-2,
+  .column-3,
+  .column-4,
+  .column-5,
+  .column-6,
+  .column-7,
+  .column-8,
+  .column-9,
+  .column-10,
+  .column-11,
   .column-12 {
     float: none;
-    width: auto;
-  }
+    width: auto; }
 
   .column + .column {
-    margin-left: 0;
-  }
-}
-
+    margin-left: 0; } }
 /*------------------------------*\
 Styling
 \*------------------------------*/
-
 .column {
   background: #eee;
   border: 1px solid #ccc;
@@ -168,32 +143,27 @@ Styling
   color: #777;
   padding: 5px;
   min-height: 30px;
-  text-align: center;
-}
+  text-align: center; }
 
 .row {
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .row:last-child {
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
 
 .column .column {
   color: #eee;
   background: #333;
-  border-color: #000;
-}
+  border-color: #000; }
 
 @media only screen and (max-width: 550px) {
   .row {
-    margin-bottom: 0;
-  }
-  .column {
-    margin-bottom: 10px;
-  }
-  .row:last-child .column:last-child {
-    margin-bottom: 0;
-  }
-}
+    margin-bottom: 0; }
 
+  .column {
+    margin-bottom: 10px; }
+
+  .row:last-child .column:last-child {
+    margin-bottom: 0; } }
+
+/*# sourceMappingURL=style.css.map */
