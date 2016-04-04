@@ -82,6 +82,14 @@ const Root = ({}) => (
           <li>Routine Manager (Create routine list, Record / Visualize them)</li>
         </ul>
       </div>
+      <div className="panel">
+        <h2>Todo of this page</h2>
+        <ul>
+          <li>Filter by category</li>
+          <li>Order by date</li>
+          <li>About page with redux router</li>
+        </ul>
+      </div>
     </div>
   </main>
 );
