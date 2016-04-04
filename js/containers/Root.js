@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Header from '../components/Header';
 
 const baseURL = 'https://github.com/yusuke-nozoe/yusuke-nozoe.github.io/blob/master';
 const cssList = [
@@ -41,9 +42,7 @@ function _linkItem(item) {
 
 const Root = ({}) => (
   <main>
-    <div className="header">
-      <a href="/" className="brand">Front-end Playground</a>
-    </div>
+    <Header />
     <div className="container">
       <div className="panel">
         <h2>CSS</h2>
@@ -74,6 +73,13 @@ const Root = ({}) => (
         <ul>
           <li>Othello</li>
           <li>Tetris</li>
+        </ul>
+      </div>
+      <div className="panel">
+        <h2>Apps</h2>
+        <ul>
+          <li>Browser Testing Tool (Create Test Schenario, Configure supporting browser, Record the test results)</li>
+          <li>Routine Manager (Create routine list, Record / Visualize them)</li>
         </ul>
       </div>
     </div>
