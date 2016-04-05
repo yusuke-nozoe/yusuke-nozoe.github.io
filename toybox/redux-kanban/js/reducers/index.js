@@ -7,6 +7,9 @@ const todo = (state, action) => {
                 status: 'TODO'
             }
         case 'CHANGE_STATUS':
+            if (state.id !== action.todo.id) {
+                return state;
+            }
             return Object.assign({}, state, {status: action.status});
         default:
             return state

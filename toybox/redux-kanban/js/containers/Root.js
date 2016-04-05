@@ -6,7 +6,7 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
 const Root = ({todos, doings, dones}) => (
-  <main>
+  <main className="row">
       <div className="list todo">
         <h2>Todo ({todos.length})</h2>
         <List list={todos} category="TODO" />

@@ -30,7 +30,7 @@ function collect(connect, monitor) {
 }
 
 const TodoItem = ({isDragging, connectDragSource, connectDropTarget, todo}) => {
-    return connectDropTarget(connectDragSource(<div>{todo.text}</div>))
+    return connectDropTarget(connectDragSource(<div className="todo-item">{todo.text}</div>))
 }
 
 TodoItem.propTypes = {
