@@ -54,6 +54,7 @@ const Root = ({}) => (
         <h2>JavaScript</h2>
         <ul>
           {jsList.map(item => _linkItem(item))}
+          <li>Trello like UI</li>
         </ul>
       </div>
       <div className="panel">
