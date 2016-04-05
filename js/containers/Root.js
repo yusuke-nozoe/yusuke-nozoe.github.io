@@ -24,7 +24,8 @@ const jsList = [
   { date: '2016/04/03', filePath: "react-hello-world", title: 'Hello world in React' },
   { date: '2016/04/03', filePath: "redux-counter", title: 'Redux Counter' },
   { date: '2016/04/03', filePath: "redux-infinite-scroll", title: 'Redux Infinite Scroll' },
-  { date: '2016/04/04', filePath: "redux-color-slider", title: 'Redux Color Slider' }
+  { date: '2016/04/04', filePath: "redux-color-slider", title: 'Redux Color Slider' },
+  { date: '2016/04/05', filePath: "redux-kanban", title: 'Redux Kanban Board UI' }
 ];
 const d3List = [
   { date: '2016/04/03', filePath: "d3-line.html", title: 'D3 line chart (Yahoo stock price)' },
@@ -53,7 +54,6 @@ const Root = ({}) => (
         <h2>JavaScript</h2>
         <ul>
           {jsList.map(item => _linkItem(item))}
-          <li>Redux Kanban board UI (Drag&Drop)</li>
         </ul>
       </div>
       <div className="panel">
