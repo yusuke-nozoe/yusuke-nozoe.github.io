@@ -1,7 +1,20 @@
-export function list(state = {todos: [], doings: [], dones: []}, action) {
+const todo = (state, action) => {
     switch (action.type) {
         case 'ADD_TODO':
-            return Object.assign({}, state, {todos: [...state.todos, action.text]});
+            return {
+                id: action.id,
+                text: action.text,
+                status: 'TODO'
+            }
+        default:
+            return state
+    }
+}
+
+export const todos = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD_TODO':
+            return [...state, todo(undefined, action)]
         default:
             return state;
     }

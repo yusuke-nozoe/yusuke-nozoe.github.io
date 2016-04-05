@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import AddTodo from '../components/AddTodo';
 
-const Root = ({todos, doings, dones, addTodo}) => (
+const Root = ({todos, doings, dones}) => (
   <main>
       <div className="todo">
         <h2>Todo ({todos.length})</h2>
-        {todos.map((todo, i) => <div key={i}>{todo}</div>)}
+        {todos.map((todo, i) => <div key={i}>{todo.text}</div>)}
         <AddTodo />
       </div>
       <div className="doing">
@@ -19,16 +19,26 @@ const Root = ({todos, doings, dones, addTodo}) => (
 )
 
 const mapStateToProps = (state) => {
-    console.log('state: ', state);
-    return {
-        todos: state.todos,
-        doings: state.doings,
-        dones: state.dones,
-    }
+    let todos = [], doings = [], dones = [];
+    state.forEach(item => {
+        switch (item.status) {
+            case 'TODO':
+                todos.push(item)
+                break
+            case 'DOING':
+                doings.push(item)
+                break
+            case 'DONE':
+                dones.push(item)
+                break
+            default:
+                break
+        }
+    })
+    return { todos, doings, dones }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTodo: (value) => dispatch({type: 'ADD_TODO', value})
     }
 }
 
