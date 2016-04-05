@@ -1,20 +1,24 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import AddTodo from '../components/AddTodo';
-import TodoItem from '../components/TodoItem';
+import List from '../components/List';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 const Root = ({todos, doings, dones}) => (
   <main>
-      <div className="todo">
+      <div className="list todo">
         <h2>Todo ({todos.length})</h2>
-        {todos.map((todo, i) => <TodoItem key={i} todo={todo} />)}
+        <List list={todos} category="TODO" />
         <AddTodo />
       </div>
-      <div className="doing">
+      <div className="list doing">
         <h2>Doing ({doings.length})</h2>
+        <List list={doings} category="DOING" />
       </div>
-      <div className="done">
+      <div className="list done">
         <h2>Done ({dones.length})</h2>
+        <List list={dones} category="DONE" />
       </div>
   </main>
 )
@@ -43,4 +47,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Root);
+export default DragDropContext(HTML5Backend)(connect(mapStateToProps, mapDispatchToProps)(Root));
