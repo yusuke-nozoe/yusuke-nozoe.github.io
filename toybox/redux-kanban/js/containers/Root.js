@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import AddTodo from '../components/AddTodo';
 
 const Root = ({todos, doings, dones, addTodo}) => (
   <main>
       <div className="todo">
         <h2>Todo ({todos.length})</h2>
         {todos.map((todo, i) => <div key={i}>{todo}</div>)}
-        <button onClick={addTodo}>Add Todo</button>
+        <AddTodo />
       </div>
       <div className="doing">
         <h2>Doing ({doings.length})</h2>
