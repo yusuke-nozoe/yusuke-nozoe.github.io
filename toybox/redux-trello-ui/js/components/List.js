@@ -3,6 +3,7 @@ import Card from './Card';
 
 const List = ({list, addCard, editList, saveList, saveCard}) => {
   let input;
+  console.log('list.cards: ', list.cards);
   return (
     <div className="list">
       {

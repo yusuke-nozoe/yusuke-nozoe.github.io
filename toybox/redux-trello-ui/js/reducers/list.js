@@ -11,29 +11,29 @@ const listItem = (state, action) => {
       };
     case 'EDIT_LIST':
       if (state.id !== action.list.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, { isEditing: true });      
     case 'SAVE_LIST':
       if (state.id !== action.list.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, { title: action.title, isEditing: false });
     case 'CANCEL_EDIT_LIST':
       if (state.id !== action.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, { isEditing: false });
     case 'ADD_CARD':
       if (state.id !== action.list.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, {
-          cards: cards(state, action)
+          cards: cards(state.cards, action)
       });
     case 'SAVE_CARD':
       if (state.id !== action.list.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, {
           cards: cards(state.cards, action)

@@ -9,22 +9,22 @@ const card = (state, action) => {
       };
     case 'EDIT_CARD':
       if (state.id !== action.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, { isEditing: true });      
     case 'SAVE_CARD':
       if (state.id !== action.card.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, { text: action.text, isEditing: false });
     case 'CANCEL_EDIT_CARD':
       if (state.id !== action.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, { isEditing: false });
     case 'MOVE_CARD':
       if (state.id !== action.id) {
-        return;
+        return state;
       }
       return Object.assign({}, state, { isEditing: false });
     default:
