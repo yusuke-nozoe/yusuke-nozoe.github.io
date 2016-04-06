@@ -12,6 +12,7 @@ body {
   overflow-y: scroll;
   background: #e2e4e6;
   border-radius: 3px; 
+  margin-right: 10px;
 }
 .list > .list-title {
   font-size: 15px;
@@ -31,7 +32,22 @@ body {
   text-decoration: none;
   color: #8c8c8c;
 }
+.add-list {
+  float: left;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  background: #006ba9;
+  border-radius: 3px; 
+  cursor: pointer;
+}
+.add-list > a {
+  text-decoration: none;
+  color: #89bbd8;
+}
 .card {
+  margin-top: 10px;
   min-height: 40px;
   background: #fff;
   padding: 5px;
