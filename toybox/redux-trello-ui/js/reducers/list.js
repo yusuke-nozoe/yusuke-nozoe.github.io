@@ -7,18 +7,18 @@ const listItem = (state, action) => {
         id: nextListID++,
         title: '',
         cards: [],
-        isEditing: false
+        isEditing: true
       };
     case 'EDIT_LIST':
-      if (state.id !== action.id) {
+      if (state.id !== action.list.id) {
         return;
       }
       return Object.assign({}, state, { isEditing: true });      
     case 'SAVE_LIST':
-      if (state.id !== action.id) {
+      if (state.id !== action.list.id) {
         return;
       }
-      return Object.assign({}, state, { title: action.title });      
+      return Object.assign({}, state, { title: action.title, isEditing: false });
     case 'CANCEL_EDIT_LIST':
       if (state.id !== action.id) {
         return;
