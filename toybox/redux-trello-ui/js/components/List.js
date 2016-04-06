@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Card from './Card';
 
-const List = ({list, addCard, editList, saveList}) => {
+const List = ({list, addCard, editList, saveList, saveCard}) => {
   let input;
   return (
     <div className="list">
@@ -13,7 +13,7 @@ const List = ({list, addCard, editList, saveList}) => {
               </div>
           ) : <div className="list-title" onClick={() => editList(list)}>{list.title}</div>
       }
-      {list.cards.map(card => <Card key={card.id} card={card} />)}
+      {list.cards.map(card => <Card key={card.id} list={list} card={card} saveCard={saveCard} />)}
       <div className="add-card" onClick={() => addCard(list)}>
         <a href="javascript:;">Add a Card</a>
       </div>

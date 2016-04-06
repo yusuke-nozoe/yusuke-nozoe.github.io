@@ -13,10 +13,10 @@ const card = (state, action) => {
       }
       return Object.assign({}, state, { isEditing: true });      
     case 'SAVE_CARD':
-      if (state.id !== action.id) {
+      if (state.id !== action.card.id) {
         return;
       }
-      return Object.assign({}, state, { text: action.text });      
+      return Object.assign({}, state, { text: action.text, isEditing: false });
     case 'CANCEL_EDIT_CARD':
       if (state.id !== action.id) {
         return;
@@ -34,7 +34,7 @@ const card = (state, action) => {
 const cards = (state = [], action) => {
   switch (action.type) {
     case 'ADD_CARD':
-      return [...state, card({}, action)];
+      return [...state, card(undefined, action)];
     case 'EDIT_CARD':
       return state.map(item => card(item, action));
     case 'SAVE_CARD':

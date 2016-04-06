@@ -29,7 +29,14 @@ const listItem = (state, action) => {
         return;
       }
       return Object.assign({}, state, {
-          cards: [...state.cards, cards(state, action) ]
+          cards: cards(state, action)
+      });
+    case 'SAVE_CARD':
+      if (state.id !== action.list.id) {
+        return;
+      }
+      return Object.assign({}, state, {
+          cards: cards(state.cards, action)
       });
     default:
       return state;
@@ -46,6 +53,8 @@ const lists = (state = [], action) => {
     case 'CANCEL_EDIT_LIST':
       return state.map(item => listItem(item, action));      
     case 'ADD_CARD':
+      return state.map(item => listItem(item, action));      
+    case 'SAVE_CARD':
       return state.map(item => listItem(item, action));      
     default:
       return state;
