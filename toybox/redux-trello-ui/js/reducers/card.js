@@ -8,7 +8,7 @@ const card = (state, action) => {
         isEditing: true
       };
     case 'EDIT_CARD':
-      if (state.id !== action.id) {
+      if (state.id !== action.card.id) {
         return state;
       }
       return Object.assign({}, state, { isEditing: true });      
