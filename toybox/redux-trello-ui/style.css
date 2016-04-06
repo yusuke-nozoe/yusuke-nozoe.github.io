@@ -1,0 +1,39 @@
+body {
+  background: #0079bf;
+  color: #4d4d4d;
+  font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
+  line-height: 18px;
+}
+.list {
+  float: left;
+  width: 250px;
+  height: 100%;
+  padding: 0 10px;
+  overflow-y: scroll;
+  background: #e2e4e6;
+  border-radius: 3px; 
+}
+.list > .list-title {
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0;
+  padding: 10px 0;
+  min-height: 19px;
+  min-width: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+.list > .add-card {
+  margin: 10px 0;
+}
+.list > .add-card > a {
+  text-decoration: none;
+  color: #8c8c8c;
+}
+.card {
+  min-height: 40px;
+  background: #fff;
+  padding: 5px;
+  border-radius: 3px;
+}

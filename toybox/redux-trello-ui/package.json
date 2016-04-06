@@ -1,0 +1,19 @@
+{
+  "name": "redux-trello-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yusuke Nozoe",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-dnd": "^2.1.4",
+    "react-dnd-html5-backend": "^2.1.2",
+    "react-dom": "^0.14.8",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1"
+  }
+}
