@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { baseURL, cssList, jsList, d3List } from '../constants/data';
 import Header from '../components/Header';
+import { baseURL } from '../constants/data';
 
 
 function _linkItem(item) {
@@ -14,7 +14,7 @@ function _linkItem(item) {
   );
 }
 
-const Root = ({}) => (
+const Root = ({cssList, jsList, d3List}) => (
   <main>
     <Header />
     <div className="container">
@@ -68,9 +68,7 @@ const Root = ({}) => (
 );
 
 const mapStateToProps = (state) => {
-  return {
-    count: state.count
-  }
+  return Object.assign({}, state);
 }
 
 const mapDispatchToProps = (dispatch) => {
