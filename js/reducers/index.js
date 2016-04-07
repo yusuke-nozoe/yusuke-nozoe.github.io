@@ -1,6 +1,6 @@
-import { cssList, jsList, d3List } from '../constants/data';
+import { data } from '../constants';
 
-export default function reducer(state = { cssList, jsList, d3List }, action) {
+export default function reducer(state = data, action) {
   switch (action.type) {
     case 'INCREMENT':
       return {

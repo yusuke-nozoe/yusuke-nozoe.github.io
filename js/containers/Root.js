@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Header from '../components/Header';
-import { baseURL } from '../constants/data';
+import { baseURL } from '../constants';
 
 
 function _linkItem(item) {
@@ -68,7 +68,23 @@ const Root = ({cssList, jsList, d3List}) => (
 );
 
 const mapStateToProps = (state) => {
-  return Object.assign({}, state);
+  let cssList = [], jsList = [], d3List = [];
+  state.forEach(item => {
+    switch (item.category) {
+      case 'css':
+        cssList.push(item);
+        break;
+      case 'js':
+        jsList.push(item);
+        break;
+      case 'd3':
+        d3List.push(item);
+        break;
+      default:
+        break;
+    }
+  });
+  return { cssList, jsList, d3List };
 }
 
 const mapDispatchToProps = (dispatch) => {
