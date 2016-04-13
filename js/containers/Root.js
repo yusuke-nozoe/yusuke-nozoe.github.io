@@ -27,6 +27,7 @@ const Root = ({cssList, jsList, d3List}) => (
         <ul>
           {jsList.map(item => _linkItem(item))}
           <li>Elm Hello world</li>
+          <li>material-ui</li>
         </ul>
       </div>
       <div className="panel">
